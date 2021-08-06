@@ -7,8 +7,6 @@ async function myFunction() {
         const searchString = "Dead"
         
         await driver.get("https://www.deadneighbors.com/news")
-        await driver.get("https://www.deadneighbors.com/info")
-        driver.navigate().back()
         var title = await driver.getTitle();
         console.log('Title is:',title);
         await newTabWindow();
@@ -19,22 +17,6 @@ async function myFunction() {
         await driver.quit();
     }
    }
-  
-   async function newTabWindow(){
-       try{
-        // Opens a new tab and switches to new tab
-        await driver.switchTo().newWindow('tab');
-        
-        // Opens a new window and switches to new window
-        await driver.switchTo().newWindow('window');
-        
-          
-        
-           
-    }catch(error){
-        console.log("errorrrrrr",error)
-    }
-}
 myFunction();
 
 
